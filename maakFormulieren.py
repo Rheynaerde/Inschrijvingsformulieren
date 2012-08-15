@@ -22,6 +22,9 @@ gd_client.ProgrammaticLogin()
 documentLaTeX = """\\documentclass{{article}}
 
 \\usepackage[margin=1.5in]{{geometry}}
+\\usepackage{{booktabs}}
+\\usepackage{{tikz}}
+\\usetikzlibrary{{intersections}}
 
 \\pagestyle {{empty}}
 \\begin{{document}}
@@ -105,8 +108,78 @@ aanvraagt voor {lid.volledigenaam} en bevestigt u dat u akkoord bent met het hui
 \\noindent \\textbf{{Naam en handtekening {handtekening}}}:
 \\bigskip
 \\bigskip
+
+\\clearpage
+
+\\begin{{center}}
+
+\\begin{{tikzpicture}}[>=latex, scale = 2]
+
+\\useasboundingbox (0,0) rectangle (4.5,5);
+
+\\coordinate (rCollar) at (1.5,3.6);
+\\coordinate (rSleeveTop) at (0,3.5);
+\\coordinate (rSleeveBottom) at (0,2.5);
+\\coordinate (rSleeveArmpit) at (1.1,2.5);
+\\coordinate (rBottom) at (1,0);
+
+\\coordinate (lCollar) at (3,3.6);
+\\coordinate (lSleeveTop) at (4.5,3.5);
+\\coordinate (lSleeveBottom) at (4.5,2.5);
+\\coordinate (lSleeveArmpit) at (3.4,2.5);
+\\coordinate (lBottom) at (3.5,0);
+
+\\coordinate (lShoulderAbove) at (3.4,4);
+\\coordinate (lSleeveAbove) at (4.5,4);
+\\coordinate (lShoulderBeside) at (5,3.6);
+\\coordinate (lBottomBeside) at (5,0);
+
+\\draw [ultra thick, name path=tshirt] (rCollar) -- (rSleeveTop) -- (rSleeveBottom) -- (rSleeveArmpit) -- (rBottom) -- (lBottom) -- (lSleeveArmpit) -- (lSleeveBottom) -- (lSleeveTop) -- (lCollar) -- (rCollar) --cycle;
+
+\\draw [name path=shoulderVertical] (lSleeveArmpit) -- (lShoulderAbove);
+\\draw (lSleeveTop) -- (lSleeveAbove);
+\\draw [name intersections={{of=tshirt and shoulderVertical}}] (intersection-3) -- (lShoulderBeside);
+\\draw (lBottom) -- (lBottomBeside);
+
+\\path (rCollar) edge [ultra thick, double, out=-90, in=-90] (lCollar);
+
+\\draw [very thick, gray,<->] (rSleeveArmpit.east) to node[below] {{A}} (lSleeveArmpit.west);
+\\draw [very thick, gray,<->] (lShoulderBeside.south) to node[right] {{B}} (lBottomBeside.north);
+\\draw [very thick, gray,<->] (lShoulderAbove.east) to node[above] {{C}} (lSleeveAbove.west);
+
+\\end{{tikzpicture}}
+
 \\bigskip
+
+Kinderen:
+
+\\begin{{tabular}}{{lcccccc}}
+& \\rule{{1cm}}{{0pt}} & \\rule{{1cm}}{{0pt}} & \\rule{{1cm}}{{0pt}}& \\rule{{1cm}}{{0pt}} & \\rule{{1cm}}{{0pt}} & \\rule{{1cm}}{{0pt}}\\\\
+\\toprule
+& 1/2 & 3/4 & 5/6 & 7/8 & 9/11 & 12/14\\\\
+\\midrule
+A Halve Borst & 30 & 33 & 36 & 39 & 42 & 45\\\\
+B Lichaamslengte & 40 & 43 & 46 & 51 & 56 & 63\\\\
+C Mouwlengte & 12 & 13 & 14 & 15 & 16,5 & 18\\\\
+\\bottomrule
+\\end{{tabular}}
+
 \\bigskip
+
+Volwassenen:
+
+\\begin{{tabular}}{{lcccccc}}
+& \\rule{{1cm}}{{0pt}} & \\rule{{1cm}}{{0pt}} & \\rule{{1cm}}{{0pt}}& \\rule{{1cm}}{{0pt}} & \\rule{{1cm}}{{0pt}} & \\rule{{1cm}}{{0pt}}\\\\
+\\toprule
+& S & M & L & XL & XXL & XXXL\\\\
+\\midrule
+A Halve Borst & 50 & 53 & 56 & 59 & 62 & 65\\\\
+B Lichaamslengte & 69 & 72 & 74 & 76 & 78 & 81\\\\
+C Mouwlengte & 20 & 20 & 20 & 21 & 21 & 21\\\\
+\\bottomrule
+\\end{{tabular}}
+
+\\end{{center}}
 
 """
 
