@@ -72,6 +72,7 @@ E-mail ({label_anderemail}): & {anderemail}\\\\
 Telefoon: & {lid.telefoon}\\\\
 & \\\\
 T-shirtmaat: & 1/2 \\  3/4 \\  5/6 \\  7/8 \\  9/11 \\  12/14 \\  S \\  M \\  L \\  XL \\  XXL \\  XXL \\\\
+& \\tiny (zie ommezijde voor overzicht maten)\\\\
 \\end{{tabular}}
 \\end{{quote}}
 
@@ -93,7 +94,6 @@ rekeningnummer BE98 1420 6537 5193 (BIC: GEBA BE BB) op naam van \\textbf{{Degen
 LIDGELD + $<$NAAM$>$.
 \\end{{quote}}
 
-\\bigskip
 \\bigskip
 
 \\noindent Door te ondertekenen gaat u akkoord dat Degencentrum Rheynaerde vzw een schermlicentie
