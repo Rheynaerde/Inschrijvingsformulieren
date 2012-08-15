@@ -21,7 +21,7 @@ gd_client.ProgrammaticLogin()
 
 documentLaTeX = """\\documentclass{{article}}
 
-\\usepackage[margin=1.5in]{{geometry}}
+\\usepackage[margin=1in]{{geometry}}
 \\usepackage{{booktabs}}
 \\usepackage{{tikz}}
 \\usetikzlibrary{{intersections}}
