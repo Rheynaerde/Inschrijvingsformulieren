@@ -1,0 +1,18 @@
+try: 
+    from xml.etree import ElementTree
+except ImportError:
+    from elementtree import ElementTree
+import gdata.spreadsheet.service
+import gdata.service
+import atom.service
+import gdata.spreadsheet
+import atom
+
+#set data location
+spreadsheetKey = '<key>'
+worksheetId = '<id>'
+
+#set user and password
+gd_client = gdata.spreadsheet.service.SpreadsheetsService()
+gd_client.email = '<email>'
+gd_client.password = '<secret>'
