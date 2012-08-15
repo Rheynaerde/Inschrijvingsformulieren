@@ -67,6 +67,8 @@ E-mail (lid): & {eigenmail}\\\\
 E-mail ({label_anderemail}): & {anderemail}\\\\
 & \\\\
 Telefoon: & {lid.telefoon}\\\\
+& \\\\
+T-shirtmaat: & 1/2 \\  3/4 \\  5/6 \\  7/8 \\  9/11 \\  12/14 \\  S \\  M \\  L \\  XL \\  XXL \\  XXL \\\\
 \\end{{tabular}}
 \\end{{quote}}
 
