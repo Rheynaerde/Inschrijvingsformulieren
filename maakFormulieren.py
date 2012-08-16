@@ -259,7 +259,7 @@ class lid:
         self.telefoon = telefoon
         
         if self.leeftijd(eindeSeizoen) < 18:
-            self.lidgeld = 180
+            self.lidgeld = 190
         else:
             self.lidgeld = 240
         
